@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "python36",
+      "display_name": "Python 3.6",
+      "language": "python"
+    },
+    "language_info": {
+      "mimetype": "text/x-python",
+      "nbconvert_exporter": "python",
+      "name": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.6.6",
+      "file_extension": ".py",
+      "codemirror_mode": {
+        "version": 3,
+        "name": "ipython"
+      }
+    }
+  },
+  "nbformat_minor": 4,
+  "nbformat": 4,
+  "cells": [
+    {
+      "cell_type": "code",
+      "source": "#setup\n!pip install nbdev\n!pip install twarc\n!pip install tqdm\n!pip install fastai\n!pip install numpy\n!pip install pandas",
+      "metadata": {
+        "trusted": true
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "text": "Collecting nbdev\n\u001b[?25l  Downloading https://files.pythonhosted.org/packages/19/54/f39f9050f0e1610c4c5f764872812ef72615dac70ea7f1c9bc20948acb04/nbdev-0.2.18-py3-none-any.whl (45kB)\n\u001b[K     |████████████████████████████████| 51kB 522kB/s eta 0:00:011\n\u001b[?25hRequirement already satisfied: pyyaml in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbdev) (3.13)\nRequirement already satisfied: nbformat>=4.4.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbdev) (4.4.0)\nRequirement already satisfied: nbconvert>=5.6.1 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbdev) (5.6.1)\nCollecting fastscript\n  Downloading https://files.pythonhosted.org/packages/55/0e/ecdc0213646bc82986884121109a38b50bbc2cd2c491bbbfdc7ae39228e3/fastscript-0.1.4-py3-none-any.whl\nRequirement already satisfied: packaging in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbdev) (18.0)\nRequirement already satisfied: traitlets>=4.1 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbformat>=4.4.0->nbdev) (4.3.2)\nRequirement already satisfied: jupyter-core in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbformat>=4.4.0->nbdev) (4.4.0)\nRequirement already satisfied: ipython-genutils in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbformat>=4.4.0->nbdev) (0.2.0)\nRequirement already satisfied: jsonschema!=2.5.0,>=2.4 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbformat>=4.4.0->nbdev) (2.6.0)\nRequirement already satisfied: testpath in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbconvert>=5.6.1->nbdev) (0.4.2)\nRequirement already satisfied: mistune<2,>=0.8.1 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbconvert>=5.6.1->nbdev) (0.8.4)\nRequirement already satisfied: entrypoints>=0.2.2 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbconvert>=5.6.1->nbdev) (0.2.3)\nRequirement already satisfied: bleach in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbconvert>=5.6.1->nbdev) (1.5.0)\nRequirement already satisfied: pygments in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbconvert>=5.6.1->nbdev) (2.2.0)\nRequirement already satisfied: defusedxml in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbconvert>=5.6.1->nbdev) (0.5.0)\nRequirement already satisfied: pandocfilters>=1.4.1 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbconvert>=5.6.1->nbdev) (1.4.2)\nRequirement already satisfied: jinja2>=2.4 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from nbconvert>=5.6.1->nbdev) (2.10)\nRequirement already satisfied: pyparsing>=2.0.2 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from packaging->nbdev) (2.3.0)\nRequirement already satisfied: six in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from packaging->nbdev) (1.11.0)\nRequirement already satisfied: decorator in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from traitlets>=4.1->nbformat>=4.4.0->nbdev) (4.3.0)\nRequirement already satisfied: html5lib!=0.9999,!=0.99999,<0.99999999,>=0.999 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from bleach->nbconvert>=5.6.1->nbdev) (0.9999999)\nRequirement already satisfied: MarkupSafe>=0.23 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from jinja2>=2.4->nbconvert>=5.6.1->nbdev) (1.1.0)\nInstalling collected packages: fastscript, nbdev\nSuccessfully installed fastscript-0.1.4 nbdev-0.2.18\n\u001b[33mWARNING: You are using pip version 19.3.1; however, version 20.1 is available.\nYou should consider upgrading via the 'pip install --upgrade pip' command.\u001b[0m\nCollecting twarc\n  Downloading https://files.pythonhosted.org/packages/d9/e7/d65758f2cb7267b2fb8a905b53987ce4f21240a40d0317d8d085c83875a8/twarc-1.8.3.tar.gz\nRequirement already satisfied: pytest in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from twarc) (3.8.2)\nRequirement already satisfied: python-dateutil in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from twarc) (2.8.1)\nRequirement already satisfied: requests_oauthlib in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from twarc) (1.3.0)\nRequirement already satisfied: py>=1.5.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pytest->twarc) (1.6.0)\nRequirement already satisfied: six>=1.10.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pytest->twarc) (1.11.0)\nRequirement already satisfied: setuptools in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pytest->twarc) (41.6.0)\nRequirement already satisfied: attrs>=17.4.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pytest->twarc) (18.2.0)\nRequirement already satisfied: more-itertools>=4.0.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pytest->twarc) (4.3.0)\nRequirement already satisfied: atomicwrites>=1.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pytest->twarc) (1.2.1)\nRequirement already satisfied: pluggy>=0.7 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pytest->twarc) (0.7.1)\nRequirement already satisfied: requests>=2.0.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from requests_oauthlib->twarc) (2.22.0)\nRequirement already satisfied: oauthlib>=3.0.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from requests_oauthlib->twarc) (3.1.0)\nRequirement already satisfied: chardet<3.1.0,>=3.0.2 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from requests>=2.0.0->requests_oauthlib->twarc) (3.0.4)\nRequirement already satisfied: idna<2.9,>=2.5 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from requests>=2.0.0->requests_oauthlib->twarc) (2.7)\nRequirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from requests>=2.0.0->requests_oauthlib->twarc) (1.23)\nRequirement already satisfied: certifi>=2017.4.17 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from requests>=2.0.0->requests_oauthlib->twarc) (2018.10.15)\nBuilding wheels for collected packages: twarc\n  Building wheel for twarc (setup.py) ... \u001b[?25ldone\n\u001b[?25h  Created wheel for twarc: filename=twarc-1.8.3-cp36-none-any.whl size=28933 sha256=2d406f2f66f14b3fc98f42cfa672bb67a585b0a50130ece3fb599f4265fa58d0\n  Stored in directory: /home/nbuser/.cache/pip/wheels/df/44/b3/5692a47c134c30786a2e738a37db527adf271acb50317500d2\nSuccessfully built twarc\nInstalling collected packages: twarc\nSuccessfully installed twarc-1.8.3\n\u001b[33mWARNING: You are using pip version 19.3.1; however, version 20.1 is available.\nYou should consider upgrading via the 'pip install --upgrade pip' command.\u001b[0m\nRequirement already satisfied: tqdm in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (4.26.0)\n\u001b[33mWARNING: You are using pip version 19.3.1; however, version 20.1 is available.\nYou should consider upgrading via the 'pip install --upgrade pip' command.\u001b[0m\nCollecting fastai\n\u001b[?25l  Downloading https://files.pythonhosted.org/packages/54/12/f965e8529658c109ec710e77c843227b1acecfc0d3b22f5082b330b78e3a/fastai-1.0.61-py3-none-any.whl (239kB)\n\u001b[K     |████████████████████████████████| 245kB 3.3MB/s eta 0:00:01\n\u001b[?25hRequirement already satisfied: bottleneck in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (1.2.1)\nRequirement already satisfied: torchvision in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (0.4.2)\nCollecting fastprogress>=0.2.1\n  Downloading https://files.pythonhosted.org/packages/a3/da/ffd8fe0daf7e679804a32a1e8654ac2988e2ef85937fc1d223e98eee736e/fastprogress-0.2.3-py3-none-any.whl\nCollecting spacy>=2.0.18; python_version < \"3.8\"\n\u001b[?25l  Downloading https://files.pythonhosted.org/packages/55/2e/ac00f5c9d01e66cc6ab75eb2a460c9b0dc21ad99a12f810c86a58309e63c/spacy-2.2.4-cp36-cp36m-manylinux1_x86_64.whl (10.6MB)\n\u001b[K     |████████████████████████████████| 10.6MB 61kB/s  eta 0:00:01\n\u001b[?25hRequirement already satisfied: pandas in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (0.23.4)\nRequirement already satisfied: scipy in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (1.1.0)\nCollecting nvidia-ml-py3\n  Downloading https://files.pythonhosted.org/packages/6d/64/cce82bddb80c0b0f5c703bbdafa94bfb69a1c5ad7a79cff00b482468f0d3/nvidia-ml-py3-7.352.0.tar.gz\nRequirement already satisfied: requests in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (2.22.0)\nRequirement already satisfied: torch>=1.0.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (1.3.1)\nRequirement already satisfied: numpy>=1.15 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (1.16.2)\nCollecting dataclasses; python_version < \"3.7\"\n  Downloading https://files.pythonhosted.org/packages/e1/d2/6f02df2616fd4016075f60157c7a0452b38d8f7938ae94343911e0fb0b09/dataclasses-0.7-py3-none-any.whl\nRequirement already satisfied: packaging in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (18.0)\nRequirement already satisfied: beautifulsoup4 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (4.6.3)\nRequirement already satisfied: Pillow in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (5.3.0)\nRequirement already satisfied: matplotlib in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (3.0.0)\nRequirement already satisfied: pyyaml in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (3.13)\nRequirement already satisfied: numexpr in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from fastai) (2.6.8)\nRequirement already satisfied: six in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from torchvision->fastai) (1.11.0)\nCollecting thinc==7.4.0\n\u001b[?25l  Downloading https://files.pythonhosted.org/packages/73/ed/8e4559f1090fb05c0fa982a8a2caaa315967e7b460652be479d13fd1c813/thinc-7.4.0-cp36-cp36m-manylinux1_x86_64.whl (2.2MB)\n\u001b[K     |████████████████████████████████| 2.2MB 7.5MB/s eta 0:00:01\n\u001b[?25hCollecting blis<0.5.0,>=0.4.0\n\u001b[?25l  Downloading https://files.pythonhosted.org/packages/41/19/f95c75562d18eb27219df3a3590b911e78d131b68466ad79fdf5847eaac4/blis-0.4.1-cp36-cp36m-manylinux1_x86_64.whl (3.7MB)\n\u001b[K     |████████████████████████████████| 3.7MB 157kB/s eta 0:00:01\n\u001b[?25hCollecting murmurhash<1.1.0,>=0.28.0\n  Downloading https://files.pythonhosted.org/packages/a6/e6/63f160a4fdf0e875d16b28f972083606d8d54f56cd30cb8929f9a1ee700e/murmurhash-1.0.2-cp36-cp36m-manylinux1_x86_64.whl\nCollecting preshed<3.1.0,>=3.0.2\n\u001b[?25l  Downloading https://files.pythonhosted.org/packages/db/6b/e07fad36913879757c90ba03d6fb7f406f7279e11dcefc105ee562de63ea/preshed-3.0.2-cp36-cp36m-manylinux1_x86_64.whl (119kB)\n\u001b[K     |████████████████████████████████| 122kB 11.5MB/s eta 0:00:01\n\u001b[?25hCollecting tqdm<5.0.0,>=4.38.0\n\u001b[?25l  Downloading https://files.pythonhosted.org/packages/c9/40/058b12e8ba10e35f89c9b1fdfc2d4c7f8c05947df2d5eb3c7b258019fda0/tqdm-4.46.0-py2.py3-none-any.whl (63kB)\n\u001b[K     |████████████████████████████████| 71kB 777kB/s  eta 0:00:01\n\u001b[?25hRequirement already satisfied: setuptools in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from spacy>=2.0.18; python_version < \"3.8\"->fastai) (41.6.0)\nCollecting catalogue<1.1.0,>=0.0.7\n  Downloading https://files.pythonhosted.org/packages/6c/f9/9a5658e2f56932e41eb264941f9a2cb7f3ce41a80cb36b2af6ab78e2f8af/catalogue-1.0.0-py2.py3-none-any.whl\nCollecting plac<1.2.0,>=0.9.6\n  Downloading https://files.pythonhosted.org/packages/86/85/40b8f66c2dd8f4fd9f09d59b22720cffecf1331e788b8a0cab5bafb353d1/plac-1.1.3-py2.py3-none-any.whl\nCollecting srsly<1.1.0,>=1.0.2\n\u001b[?25l  Downloading https://files.pythonhosted.org/packages/0e/9a/70bd934dd4d25545c9aa6c8cd4edbac2a33ba9c915439a9209b69f0ec0ad/srsly-1.0.2-cp36-cp36m-manylinux1_x86_64.whl (185kB)\n\u001b[K     |████████████████████████████████| 194kB 8.9MB/s eta 0:00:01\n\u001b[?25hCollecting wasabi<1.1.0,>=0.4.0\n  Downloading https://files.pythonhosted.org/packages/21/e1/e4e7b754e6be3a79c400eb766fb34924a6d278c43bb828f94233e0124a21/wasabi-0.6.0-py3-none-any.whl\nCollecting cymem<2.1.0,>=2.0.2\n  Downloading https://files.pythonhosted.org/packages/e7/b5/3e1714ebda8fd7c5859f9b216e381adc0a38b962f071568fd00d67e1b1ca/cymem-2.0.3-cp36-cp36m-manylinux1_x86_64.whl\nRequirement already satisfied: python-dateutil>=2.5.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pandas->fastai) (2.8.1)\nRequirement already satisfied: pytz>=2011k in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pandas->fastai) (2019.3)\nRequirement already satisfied: certifi>=2017.4.17 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from requests->fastai) (2018.10.15)\nRequirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from requests->fastai) (1.23)\nRequirement already satisfied: idna<2.9,>=2.5 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from requests->fastai) (2.7)\nRequirement already satisfied: chardet<3.1.0,>=3.0.2 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from requests->fastai) (3.0.4)\nRequirement already satisfied: pyparsing>=2.0.2 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from packaging->fastai) (2.3.0)\nRequirement already satisfied: cycler>=0.10 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from matplotlib->fastai) (0.10.0)\nRequirement already satisfied: kiwisolver>=1.0.1 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from matplotlib->fastai) (1.0.1)\nCollecting importlib-metadata>=0.20; python_version < \"3.8\"\n  Downloading https://files.pythonhosted.org/packages/ad/e4/891bfcaf868ccabc619942f27940c77a8a4b45fd8367098955bb7e152fb1/importlib_metadata-1.6.0-py2.py3-none-any.whl\nCollecting zipp>=0.5\n  Downloading https://files.pythonhosted.org/packages/b2/34/bfcb43cc0ba81f527bc4f40ef41ba2ff4080e047acb0586b56b3d017ace4/zipp-3.1.0-py3-none-any.whl\nBuilding wheels for collected packages: nvidia-ml-py3\n  Building wheel for nvidia-ml-py3 (setup.py) ... \u001b[?25ldone\n\u001b[?25h  Created wheel for nvidia-ml-py3: filename=nvidia_ml_py3-7.352.0-cp36-none-any.whl size=20124 sha256=669bb3924eae9acd301f2aad4e9e5819c5fe55c352c7585cd08bcafced61eac7\n  Stored in directory: /home/nbuser/.cache/pip/wheels/e4/1d/06/640c93f5270d67d0247f30be91f232700d19023f9e66d735c7\nSuccessfully built nvidia-ml-py3\nInstalling collected packages: fastprogress, blis, murmurhash, wasabi, tqdm, srsly, zipp, importlib-metadata, catalogue, cymem, preshed, plac, thinc, spacy, nvidia-ml-py3, dataclasses, fastai\n  Found existing installation: tqdm 4.26.0\n    Uninstalling tqdm-4.26.0:\n      Successfully uninstalled tqdm-4.26.0\nSuccessfully installed blis-0.4.1 catalogue-1.0.0 cymem-2.0.3 dataclasses-0.7 fastai-1.0.61 fastprogress-0.2.3 importlib-metadata-1.6.0 murmurhash-1.0.2 nvidia-ml-py3-7.352.0 plac-1.1.3 preshed-3.0.2 spacy-2.2.4 srsly-1.0.2 thinc-7.4.0 tqdm-4.46.0 wasabi-0.6.0 zipp-3.1.0\n\u001b[33mWARNING: You are using pip version 19.3.1; however, version 20.1 is available.\nYou should consider upgrading via the 'pip install --upgrade pip' command.\u001b[0m\nRequirement already satisfied: numpy in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (1.16.2)\n\u001b[33mWARNING: You are using pip version 19.3.1; however, version 20.1 is available.\nYou should consider upgrading via the 'pip install --upgrade pip' command.\u001b[0m\nRequirement already satisfied: pandas in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (0.23.4)\nRequirement already satisfied: pytz>=2011k in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pandas) (2019.3)\nRequirement already satisfied: numpy>=1.9.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pandas) (1.16.2)\nRequirement already satisfied: python-dateutil>=2.5.0 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from pandas) (2.8.1)\nRequirement already satisfied: six>=1.5 in /home/nbuser/anaconda3_501/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas) (1.11.0)\n\u001b[33mWARNING: You are using pip version 19.3.1; however, version 20.1 is available.\nYou should consider upgrading via the 'pip install --upgrade pip' command.\u001b[0m\n",
+          "name": "stdout",
+          "output_type": "stream"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": "# default_exp core",
+      "metadata": {
+        "trusted": true
+      },
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": "# tweet extractor\n\n> Extracts tweets from hydrated zipped file and returns a dataframe.",
+      "metadata": {}
+    },
+    {
+      "cell_type": "code",
+      "source": "#hide\nfrom nbdev.showdoc import *",
+      "metadata": {
+        "trusted": true
+      },
+      "execution_count": 3,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": "#export\nfrom pathlib import Path\nimport gzip",
+      "metadata": {
+        "trusted": true
+      },
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": "#export\ndef untar(source:Path, dest:Path=None, verbose=False) -> Path:\n    \"Unzip `source` to `dest` if `dest` doesn't exist, and unzip to the source folder\"\n    dest = source if dest is None else dest/source.name\n    if verbose: print(f'source:{source} dest:{dest}')\n    if dest.exists(): shutil.rmtree(dest)\n    if not dest.exists():\n        if verbose: print(\"extracting..\")\n        dest.parent.mkdir    \n        dest.touch()\n        with gzip.open(source, \"rb\") as file:\n            for line in file:\n                dest.write(line) \n            uncompressed_file.close()\n        if verbose: print('File extracted successfully.')\n    return dest",
+      "metadata": {
+        "trusted": true
+      },
+      "execution_count": 8,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": "source = Path(\"../tweets\")\ndest = Path(\"/tweets\")",
+      "metadata": {
+        "trusted": true
+      },
+      "execution_count": 12,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": "files = [file for file in source.iterdir()]\nfiles",
+      "metadata": {
+        "trusted": true
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "execution_count": 4,
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": "[PosixPath('../tweets/coronavirus-tweet-id-2020-01-21-23.jsonl.gz'),\n PosixPath('../tweets/coronavirus-tweet-id-2020-01-21-22.jsonl.gz'),\n PosixPath('../tweets/coronavirus-tweet-id-2020-01-22-00.jsonl.gz')]"
+          },
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": "for source in files:\n    untar(source, dest, verbose=True)",
+      "metadata": {
+        "trusted": true
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "text": "source:../tweets/coronavirus-tweet-id-2020-01-21-23.jsonl.gz dest:tweets/coronavirus-tweet-id-2020-01-21-23.jsonl.gz\nextracting..\n",
+          "name": "stdout",
+          "output_type": "stream"
+        },
+        {
+          "ename": "FileNotFoundError",
+          "evalue": "[Errno 2] No such file or directory: 'tweets/coronavirus-tweet-id-2020-01-21-23.jsonl.gz'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-11-6eb04692b789>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mfor\u001b[0m \u001b[0msource\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mfiles\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m     \u001b[0muntar\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msource\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mdest\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mverbose\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mTrue\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m<ipython-input-8-57480abd8379>\u001b[0m in \u001b[0;36muntar\u001b[0;34m(source, dest, verbose)\u001b[0m\n\u001b[1;32m      8\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mverbose\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"extracting..\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      9\u001b[0m         \u001b[0mdest\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mparent\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmkdir\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 10\u001b[0;31m         \u001b[0mdest\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mtouch\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     11\u001b[0m         \u001b[0;32mwith\u001b[0m \u001b[0mgzip\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mopen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msource\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"rb\"\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mfile\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     12\u001b[0m             \u001b[0;32mfor\u001b[0m \u001b[0mline\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mfile\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m~/anaconda3_501/lib/python3.6/pathlib.py\u001b[0m in \u001b[0;36mtouch\u001b[0;34m(self, mode, exist_ok)\u001b[0m\n\u001b[1;32m   1234\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0mexist_ok\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1235\u001b[0m             \u001b[0mflags\u001b[0m \u001b[0;34m|=\u001b[0m \u001b[0mos\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mO_EXCL\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1236\u001b[0;31m         \u001b[0mfd\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_raw_open\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mflags\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mmode\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1237\u001b[0m         \u001b[0mos\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mclose\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfd\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1238\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m~/anaconda3_501/lib/python3.6/pathlib.py\u001b[0m in \u001b[0;36m_raw_open\u001b[0;34m(self, flags, mode)\u001b[0m\n\u001b[1;32m   1042\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_closed\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1043\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_raise_closed\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1044\u001b[0;31m         \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_accessor\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mopen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mflags\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mmode\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1045\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1046\u001b[0m     \u001b[0;31m# Public API\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m~/anaconda3_501/lib/python3.6/pathlib.py\u001b[0m in \u001b[0;36mwrapped\u001b[0;34m(pathobj, *args)\u001b[0m\n\u001b[1;32m    385\u001b[0m         \u001b[0;34m@\u001b[0m\u001b[0mfunctools\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mwraps\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mstrfunc\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    386\u001b[0m         \u001b[0;32mdef\u001b[0m \u001b[0mwrapped\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpathobj\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m*\u001b[0m\u001b[0margs\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 387\u001b[0;31m             \u001b[0;32mreturn\u001b[0m \u001b[0mstrfunc\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mstr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpathobj\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m*\u001b[0m\u001b[0margs\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    388\u001b[0m         \u001b[0;32mreturn\u001b[0m \u001b[0mstaticmethod\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mwrapped\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    389\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'tweets/coronavirus-tweet-id-2020-01-21-23.jsonl.gz'"
+          ],
+          "output_type": "error"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": "",
+      "metadata": {},
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
