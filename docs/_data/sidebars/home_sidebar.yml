@@ -7,24 +7,21 @@ entries:
 - folders:
   - folderitems:
     - output: web,pdf
-      title: Export to modules
-      url: /export.html
+      title: Overview
+      url: /
     - output: web,pdf
-      title: Convert to html
-      url: /export2html.html
+      title: Coroutines
+      url: /coroutines
     - output: web,pdf
-      title: Show doc
-      url: /showdoc.html
+      title: Makedf
+      url: /makeDf
     - output: web,pdf
-      title: Test functions
-      url: /test.html
+      title: SendableDf
+      url: /sendableDf
     - output: web,pdf
-      title: Core functions
-      url: /core.html
-    - output: web,pdf
-      title: Command line functions
-      url: /cli.html
+      title: Untarify
+      url: /untarify
     output: web
-    title: Notebook
+    title: json2dataframe
   output: web
   title: Sidebar
