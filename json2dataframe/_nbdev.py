@@ -2,17 +2,17 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"coroutine": "coroutines.ipynb",
-         "json_coro": "coroutines.ipynb",
-         "MakeDf": "makeDf.ipynb",
-         "SendableDf": "sendableDf.ipynb",
-         "untar": "untarify.ipynb",
-         "powerup_untar": "untarify.ipynb"}
+index = {"untar": "00_untarify.ipynb",
+         "powerup_untar": "00_untarify.ipynb",
+         "coroutine": "01_coroutines.ipynb",
+         "json_coro": "01_coroutines.ipynb",
+         "SendableDf": "02_sendableDf.ipynb",
+         "MakeDf": "03_makeDf.ipynb"}
 
-modules = ["coroutines.py",
-           "makeDf.py",
+modules = ["untarify.py",
+           "coroutines.py",
            "sendableDf.py",
-           "untarify.py"]
+           "makeDf.py"]
 
 doc_url = "https://sapal6.github.io/json2dataframe/"
 
