@@ -31,28 +31,6 @@ description: "Contains public API to create pandas dataframe from json files. Us
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-30-d86b9393a4bb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-red-fg">#export</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">from</span> pathlib <span class="ansi-green-fg">import</span> Path
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>coroutines <span class="ansi-green-fg">import</span> <span class="ansi-blue-fg">*</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-green-fg">from</span> <span class="ansi-blue-fg">.</span>sendableDf <span class="ansi-green-fg">import</span> <span class="ansi-blue-fg">*</span>
-
-<span class="ansi-red-fg">ImportError</span>: attempted relative import with no known parent package</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -74,7 +52,7 @@ description: "Contains public API to create pandas dataframe from json files. Us
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="MakeDf" class="doc_header"><code>class</code> <code>MakeDf</code><a href="https://github.com/sapal6/json2dataframe/tree/master/json2dataframe/makeDf.py#L14" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MakeDf</code>(<strong><code>key_str</code></strong>:<code>str</code>)</p>
+<h2 id="MakeDf" class="doc_header"><code>class</code> <code>MakeDf</code><a href="https://github.com/sapal6/json2dataframe/tree/master/json2dataframe/makeDf.py#L13" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MakeDf</code>(<strong><code>key_str</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Provides API to create dataframe from json files.
 Provides the method <code>dataframe()</code> which can be used to
@@ -184,7 +162,7 @@ Parsing test/working/coronavirus-tweet-id-2020-01-21-23.jsonl
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="MakeDf.dataframe" class="doc_header"><code>MakeDf.dataframe</code><a href="https://github.com/sapal6/json2dataframe/tree/master/json2dataframe/makeDf.py#L34" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>MakeDf.dataframe</code>(<strong><code>json_files_dir</code></strong>:<code>str</code>)</p>
+<h4 id="MakeDf.dataframe" class="doc_header"><code>MakeDf.dataframe</code><a href="https://github.com/sapal6/json2dataframe/tree/master/json2dataframe/makeDf.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>MakeDf.dataframe</code>(<strong><code>json_files_dir</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>High level API to send data to producer.</p>
 <p>Accepts the path to the directory where

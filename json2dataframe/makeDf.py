@@ -3,8 +3,7 @@
 __all__ = ['MakeDf']
 
 # Cell
-#export
-from pathlib import Path
+#required for scripts in jupyter notebook
 from .coroutines import *
 from .sendableDf import *
 
