@@ -10,17 +10,17 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: Untarify
+      url: /untarify
+    - output: web,pdf
       title: Coroutines
       url: /coroutines
-    - output: web,pdf
-      title: Makedf
-      url: /makeDf
     - output: web,pdf
       title: SendableDf
       url: /sendableDf
     - output: web,pdf
-      title: Untarify
-      url: /untarify
+      title: Makedf
+      url: /makeDf
     output: web
     title: json2dataframe
   output: web

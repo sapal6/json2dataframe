@@ -1,5 +1,5 @@
 # Json2Dataframe
-> Json2Dataframe started as an experiment to test the following questions in my mind-->
+> Json2Dataframe started as an experiment to test the following questions in my mind -->
 
 
 This file will become your README and also the index of your documentation.
@@ -21,7 +21,7 @@ The following quick examples can help you get started-->
 from pathlib import Path
 from json2dataframe.untarify import *
 path = Path("./test/input/test")
-files = [file for file in path.iterdir() if file.suffix == '.gz']
+files = [file for file in path.iterdir() if file.suffix=='.gz']
 
 for file in files:
     untar(file)
@@ -85,3 +85,13 @@ df.head()
 </div>
 
 
+
+## Contributing To The Library
+
+For detailed contribution guidelines refer to the `contribution` page. 
+
+* Right now the immediate thing on which I need help is creating tests for the code. This library is still under developement and I will add tests evetually, but if you can add tests then it would help to catch bugs early. 
+
+* Another area which needs immediate attention is the code itself. I haven't yet paid attention towards finetuning of the code so this is one of the areas where you can contribute.
+
+* There might be places in teh code where there is a need to follow best practices. This is another area where immediate help is needed. By the way this library closely follows the fastai coding conventions and best practices.

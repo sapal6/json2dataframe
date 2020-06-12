@@ -5,8 +5,8 @@ title: Json2Dataframe
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Json2Dataframe started as an experiment to test the following questions in my mind-->"
-description: "Json2Dataframe started as an experiment to test the following questions in my mind-->"
+summary: "Json2Dataframe started as an experiment to test the following questions in my mind -->"
+description: "Json2Dataframe started as an experiment to test the following questions in my mind -->"
 ---
 <!--
 
@@ -76,7 +76,7 @@ description: "Json2Dataframe started as an experiment to test the following ques
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span> <span class="nn">json2dataframe.untarify</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;./test/input/test&quot;</span><span class="p">)</span>
-<span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span> <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s1">&#39;.gz&#39;</span><span class="p">]</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span> <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">suffix</span><span class="o">==</span><span class="s1">&#39;.gz&#39;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
     <span class="n">untar</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
@@ -185,6 +185,27 @@ Parsing test/working/coronavirus-tweet-id-2020-01-21-23.jsonl
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Contributing-To-The-Library">Contributing To The Library<a class="anchor-link" href="#Contributing-To-The-Library"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For detailed contribution guidelines refer to the <code>contribution</code> page.</p>
+<ul>
+<li><p>Right now the immediate thing on which I need help is creating tests for the code. This library is still under developement and I will add tests evetually, but if you can add tests then it would help to catch bugs early.</p>
+</li>
+<li><p>Another area which needs immediate attention is the code itself. I haven't yet paid attention towards finetuning of the code so this is one of the areas where you can contribute.</p>
+</li>
+<li><p>There might be places in teh code where there is a need to follow best practices. This is another area where immediate help is needed. By the way this library closely follows the fastai coding conventions and best practices.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div>
  
 
