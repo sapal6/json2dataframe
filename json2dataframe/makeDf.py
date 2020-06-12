@@ -4,6 +4,7 @@ __all__ = ['MakeDf']
 
 # Cell
 #required for scripts in jupyter notebook
+from pathlib import Path
 from .coroutines import *
 from .sendableDf import *
 
